@@ -36,10 +36,10 @@ if [[  $(docker images | grep 'netapp/trident' | grep 22.04.0 | wc -l) -ne 3 ]];
   echo "# PULLING TRIDENT IMAGES FROM DOCKER HUB"
   echo "########################################"
  
-  if [[  $(docker images | grep registry | grep trident | grep 22.07.0 | wc -l) -eq 0 ]]; then
-    docker pull netapp/trident:22.07.0
-    docker pull netapp/trident-operator:22.07.0
-    docker pull netapp/trident-autosupport:22.07.0
+  if [[  $(docker images | grep registry | grep trident | grep 22.10.0 | wc -l) -eq 0 ]]; then
+    docker pull netapp/trident:22.10.0
+    docker pull netapp/trident-operator:22.10.0
+    docker pull netapp/trident-autosupport:22.10.0
   fi
 
   docker pull netapp/trident:22.04.0
@@ -51,14 +51,14 @@ echo "####################################"
 echo "# TAGGING/PUSHING TRIDENT IMAGES"
 echo "####################################"
 
-if [[  $(docker images | grep registry | grep trident | grep 22.07.0 | wc -l) -eq 0 ]]; then
-  docker tag netapp/trident:22.07.0 registry.demo.netapp.com/trident:22.07.0
-  docker tag netapp/trident-operator:22.07.0 registry.demo.netapp.com/trident-operator:22.07.0
-  docker tag netapp/trident-autosupport:22.07.0 registry.demo.netapp.com/trident-autosupport:22.07.0
+if [[  $(docker images | grep registry | grep trident | grep 22.10.0 | wc -l) -eq 0 ]]; then
+  docker tag netapp/trident:22.10.0 registry.demo.netapp.com/trident:22.10.0
+  docker tag netapp/trident-operator:22.10.0 registry.demo.netapp.com/trident-operator:22.10.0
+  docker tag netapp/trident-autosupport:22.10.0 registry.demo.netapp.com/trident-autosupport:22.10.0
 
-  docker push registry.demo.netapp.com/trident:22.07.0
-  docker push registry.demo.netapp.com/trident-operator:22.07.0
-  docker push registry.demo.netapp.com/trident-autosupport:22.07.0
+  docker push registry.demo.netapp.com/trident:22.10.0
+  docker push registry.demo.netapp.com/trident-operator:22.10.0
+  docker push registry.demo.netapp.com/trident-autosupport:22.10.0
 fi
 
 docker tag netapp/trident:22.04.0 registry.demo.netapp.com/trident:22.04.0
