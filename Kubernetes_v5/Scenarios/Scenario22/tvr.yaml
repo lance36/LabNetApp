@@ -1,0 +1,8 @@
+apiVersion: trident.netapp.io/v1
+kind: TridentVolumeReference
+metadata:
+  name: nginx-pvc
+  namespace: secondary
+spec:
+  pvcName: primary-pvc
+  pvcNamespace: primary
