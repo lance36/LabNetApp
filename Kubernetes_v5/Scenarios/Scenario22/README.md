@@ -59,7 +59,7 @@ NAME                READY   STATUS    RESTARTS   AGE
 pod/busybox-primary   1/1     Running   0          41m
 
 NAME                                STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS        AGE
-persistentvolumeclaim/primary-pvc   Bound    pvc-c7b2e6f5-0c7f-41db-938b-646721805d63   100Gi      RWX            storage-class-nas   47m
+persistentvolumeclaim/primary-pvc   Bound    pvc-c7b2e6f5-0c7f-41db-938b-646721805d63   10Gi      RWX            storage-class-nas   47m
 ```
 
 Access the primary busybox pod shell and create a test file in the persistent volume:
@@ -97,7 +97,7 @@ NAME                                                 AGE
 tridentvolumereference.trident.netapp.io/busybox-pvc   51m
 
 NAME                                  STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS        AGE
-persistentvolumeclaim/secondary-pvc   Bound    pvc-8b0e35ae-85e1-4d92-9c75-e62187919f1f   100Gi      RWX            storage-class-nas   49m
+persistentvolumeclaim/secondary-pvc   Bound    pvc-8b0e35ae-85e1-4d92-9c75-e62187919f1f   10Gi      RWX            storage-class-nas   49m
 ```
 
 Also notice with tridentctl that only one volume was created, but two PVCs: one of which is shown as `subordinate`
